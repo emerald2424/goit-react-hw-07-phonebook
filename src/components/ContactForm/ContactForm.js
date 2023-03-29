@@ -28,7 +28,7 @@ export const ContactForm = () => {
       )
       .required('Required'),
 
-    number: Yup.string()
+    phone: Yup.string()
       .matches(
         /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/,
         'Phone number must be digits and can contain spaces, dashes, parentheses and can start with +'
@@ -38,7 +38,7 @@ export const ContactForm = () => {
 
   return (
     <Formik
-      initialValues={{ name: '', number: '' }}
+      initialValues={{ name: '', phone: '' }}
       validationSchema={ContactSchema}
       onSubmit={(values, actions) => {
         handleSubmit(
@@ -59,8 +59,8 @@ export const ContactForm = () => {
 
         <label>
           Number
-          <Field type="tel" name="number" />
-          <ErrorMessage name="number" component="span"></ErrorMessage>
+          <Field type="tel" name="phone" />
+          <ErrorMessage name="phone" component="span"></ErrorMessage>
         </label>
 
         <button type="submit">Add contact</button>

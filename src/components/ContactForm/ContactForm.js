@@ -16,7 +16,6 @@ export const ContactForm = () => {
     if (names.includes(contact.name.toLowerCase())) {
       return alert(`${contact.name} is already in contacts`);
     }
-
     dispatch(addContact(contact));
   };
 
@@ -47,7 +46,8 @@ export const ContactForm = () => {
             id: nanoid(),
           }
         );
-          actions.resetForm()
+        
+        actions.resetForm()
       }}
     >
       <Form>
